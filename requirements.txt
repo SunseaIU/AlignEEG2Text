@@ -1,0 +1,17 @@
+# AlignEEG2Text — direct dependencies (Python 3.10)
+# Install a CUDA-matched PyTorch build first: https://pytorch.org/get-started/locally/
+torch>=2.1
+numpy
+pandas
+scipy
+mne>=1.6
+pyyaml
+tqdm
+transformers>=4.40
+peft>=0.10
+nltk
+bert-score
+matplotlib
+h5py            # ZuCo 2.0 reader (zuco_experiments/)
+openpyxl        # reading ChineseEEG .xlsx annotation files
+tensorboard     # optional, training logs (torch.utils.tensorboard)

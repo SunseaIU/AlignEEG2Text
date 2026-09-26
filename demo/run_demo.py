@@ -97,7 +97,7 @@ def main():
         "--subject", args.subject,
         "--variant", "linear_multi",     # Joint Linear (Ours)
         "--seed", "42",
-        "--freeze_eeg", "True",          # Stage-2 冻结编码器（论文设置）
+        "--freeze_eeg", "True",          # Fig.3/Table IV 受控协议：冻结对齐编码器（Table I 主 pipeline 为联合微调，见 train_generation.py）
         "--epochs", str(args.epochs),
         "--data_ratio", str(args.data_ratio),
         "--batch_size", "8",
@@ -130,8 +130,8 @@ def main():
         if k in m:
             print(f"  {k:16s}: {m[k]:.4f}")
     print(f"\n  完整结果: {metrics_files[-1]}")
-    print("  论文正式结果（10被试 LOSO, 25 epochs, 35% 数据）: "
-          "BLEU-1 0.142, BERTScore F1 0.596")
+    print("  论文 Fig.3/Table IV 正式结果（10被试 LOSO, 25 epochs, 35% 数据, 冻结编码器）: "
+          "BLEU-1 0.155, BERTScore F1 0.601")
     print("\n[demo] DONE. 正式复现见 README.md。")
 
 

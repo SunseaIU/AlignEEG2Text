@@ -65,7 +65,7 @@ def main():
     print("[smoke] OK: encoder has NO graph-attention parameters "
           "(matches paper: spatial attention only)")
 
-    # Stage-2 设置：编码器冻结（对齐 Stage-1 权重后不更新）
+    # 梯度隔离自检按 Fig.3 受控协议冻结编码器（Table I 主 pipeline 的 Stage-2 为联合微调）
     for p in encoder.parameters():
         p.requires_grad_(False)
     encoder.eval()
